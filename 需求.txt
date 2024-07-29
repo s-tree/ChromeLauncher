@@ -1,0 +1,32 @@
+增加内容：
+1，开机界面固定登陆网址，用户不可修改；但需支持开发人员维护登陆网址；                                 ok
+2，需支持开发人员进行浏览器选项设置，用户不开放；                                                     ok
+3，浏览器使用chorme最新版，可支持开发人员更新浏览器版本；                                             ok
+4，浏览器禁止出现广告弹窗；
+5，PAD锁定横屏；
+6，支持调用摄像头功能，可拍照存入相册，支持相册中照片手工删除；                                       ok
+7，支持中文输入及特殊符号输入功能；                                                                   ok
+
+1.需求1中开发人员维护登录网址，需要此接口
+2.需求2中开发人员打开浏览器选项，是否是线下针对单个设备处理，如果是通过服务器维护这个开关，需要提供接口
+3.此方案需要定制Chrome，所以需求3中，如果需要更新，需要提供chrome最新代码重新实现以上需求后打包用于更新
+4.需求6中，关于支持摄像头功能，需要调用固定的js接口实现，由京希提供，另外需要进入相册中删除照片，需要进入相册的入口
+
+
+1.直接把 logo 和  开机动画的需求给到工厂里
+2.test 的固件,便于有问题可以直接修改
+3.系统签名
+4.系统要锁定横屏不可旋转,必要可关闭重力感应和陀螺仪
+5.提供出上层可动态修改ip白名单的方案
+6.系统自带的相册app中，启动的主页面要在 AndroidManifest 里加上 这个,方便html直接跳转
+<intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE"/>
+    <!-- jingxi://gallery/gallery -->
+    <data android:scheme="jingxi"
+        android:host="gallery"/>
+</intent-filter>
+7.开机默认开启wifiadb,端口号 7555
+8.移除所以系统自带浏览器，仅保留chrome
+9.开机默认开启 开发者模式

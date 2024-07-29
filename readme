@@ -1,0 +1,22 @@
+维护
+1.主页地址
+文件在 /sdcard/jxchrome/baseurl,修改此文件内保存的网址就行
+或者直接通过命令修改
+adb shell am broadcast -a com.jingxi.chrome.manager --es baseUrl http://www.baidu.com
+
+2.浏览器选项
+通过广播方式
+action = com.jingxi.chrome.manager
+参数
+isShow ： true 显示浏览器选项
+          false 不显示浏览器选项
+
+adb shell am broadcast -a com.jingxi.chrome.manager --ez isShow false
+
+3.html跳转到相册
+<a href="jingxi://gallery">goto gallery</a>
+
+4.wifi连接平板adb
+(1)确保平板与pc在同一个网段内
+(2)adb connect ${ip}:7555
+${ip} 是平板的ip地址

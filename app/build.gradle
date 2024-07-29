@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.jingxi.chrome.plugin"
+        minSdkVersion 17
+        targetSdkVersion 22
+        versionCode 4
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("smartliferelease.keystore")
+            storePassword "64z7IJnI4WFAOjX5CO3HyQsxiLCw5jtK"
+            keyAlias "smartlifereleasekey"
+            keyPassword "cscu5WWZ5nPkFthV3H1c8Rtglfk5DRC9"
+        }
+        debug {
+            storeFile file("smartliferelease.keystore")
+            storePassword "64z7IJnI4WFAOjX5CO3HyQsxiLCw5jtK"
+            keyAlias "smartlifereleasekey"
+            keyPassword "cscu5WWZ5nPkFthV3H1c8Rtglfk5DRC9"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:customtabs:23.4.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+
+afterEvaluate {
+    tasks.findByName('assembleRelease').doLast{
+        String cmd = '..\\qianming.bat '
+        def cmdResult = cmd.execute().text.trim()
+        println ("resule = " + cmdResult)
+    }
+    tasks.findByName('assembleDebug').doLast{
+        String cmd = '..\\qianmingDebug.bat '
+        def cmdResult = cmd.execute().text.trim()
+        println ("resule = " + cmdResult)
+    }
+}

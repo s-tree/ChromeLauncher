@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/checkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="请输入要修改的主页地址"
+        android:layout_marginTop="70dp"
+        android:textSize="28sp"/>
+
+    <EditText
+        android:id="@+id/urlInput"
+        android:layout_width="wrap_content"
+        android:minWidth="400dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/checkTitle"
+        android:layout_marginTop="100dp"
+        android:background="@color/trans"
+        android:gravity="center"
+        android:textColor="@color/gary"
+        android:textSize="26sp"
+        android:maxLines="1"
+        android:singleLine="true"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@+id/urlInput"
+        android:layout_alignStart="@+id/urlInput"
+        android:layout_alignEnd="@+id/urlInput"
+        android:background="@color/gary"/>
+
+    <TextView
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_bt_bg"
+        android:textColor="#fff"
+        android:text="确定"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/line"
+        android:textSize="24sp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="80dp"/>
+
+</RelativeLayout>

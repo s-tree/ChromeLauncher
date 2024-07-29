@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/menuTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="chrome菜单"
+            android:textSize="24sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_alignStart="@+id/changePass"/>
+
+        <Switch
+            android:id="@+id/menuSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/changePass"
+            android:layout_alignTop="@+id/menuTitle"
+            android:layout_alignBottom="@+id/menuTitle"/>
+
+        <TextView
+            android:id="@+id/changePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_bt_bg"
+            android:layout_below="@+id/menuTitle"
+            android:textColor="#fff"
+            android:text="更改管理员密码"
+            android:textSize="24sp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/changeUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_bt_bg"
+            android:layout_below="@+id/changePass"
+            android:layout_alignStart="@+id/changePass"
+            android:layout_alignEnd="@+id/changePass"
+            android:textColor="#fff"
+            android:text="更改首页地址"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="50dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
